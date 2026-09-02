@@ -1,0 +1,170 @@
+# ============================================================
+#  KitMod — конфиг
+#  Все перезарядки указаны в СЕКУНДАХ, шансы — в ПРОЦЕНТАХ.
+#  После правок: /kitmod reload
+# ============================================================
+
+# Сообщения (& — цветовые коды)
+messages:
+  prefix: "&8[&cKitMod&8] &f"
+  no-permission: "&cНедостаточно прав."
+  cooldown: "&7Перезарядка: &c%time%&7 сек."
+  hp-restored: "&aВозвращено &f%hp%&a HP игроку &f%player%&a."
+  hp-stolen: "&4У вас навсегда отнято %hp% HP!"
+  hp-drained: "&cВы навсегда отняли %hp% HP у &f%target%&c!"
+
+# ------------------------------------------------------------
+#  Предметы
+# ------------------------------------------------------------
+items:
+
+  # --- ПИЦЦА (еда) ---
+  pizza:
+    name: "&6Пицца"
+    material: BREAD
+    lore:
+      - "&7Восстанавливает &c15 &7голода"
+    # сколько единиц голода восстанавливает (20 = полная шкала)
+    nutrition: 15
+    saturation: 12.0
+    # можно ли есть при полной шкале голода
+    always-edible: false
+
+  # --- ПИЦЦА-МЕЧ ---
+  pizza_sword:
+    name: "&6Пицца-меч"
+    material: NETHERITE_SWORD
+    lore:
+      - "&7При ударе даёт &c2 &7голода"
+      - "&8Перезарядка: 2 сек."
+    attack-damage: 8.0
+    attack-speed: 1.6
+    unbreakable: true
+    # сколько голода даёт за удар
+    hunger-per-hit: 2
+    # перезарядка эффекта, секунд
+    cooldown: 2.0
+
+  # --- ЛЕВИАФАН ---
+  leviathan:
+    name: "&bЛевиафан"
+    material: NETHERITE_SWORD
+    lore:
+      - "&7ПКМ — бросает трезубец с &bВерностью"
+      - "&8Перезарядка: 2 сек."
+    attack-damage: 9.0
+    attack-speed: 1.6
+    unbreakable: true
+    # перезарядка броска, секунд
+    cooldown: 2.0
+    # сколько трезубцев кидается за раз
+    tridents: 1
+    # уровень зачарования "Верность" на брошенном трезубце
+    loyalty-level: 3
+    # начальная скорость трезубца
+    speed: 2.5
+    # разброс между трезубцами (если tridents > 1), в градусах
+    spread: 8.0
+    # может ли игрок подобрать брошенный трезубец
+    pickup: false
+
+  # --- КОСА ВАМПИРА ---
+  vampire_scythe:
+    name: "&4Коса вампира"
+    material: NETHERITE_SWORD
+    lore:
+      - "&7При ударе: &a+5 HP&7, &6+1 голода"
+      - "&7Шанс &c1%&7 — навсегда отнять &c2 HP"
+      - "&8Перезарядка: 4 сек."
+    attack-damage: 10.0
+    attack-speed: 1.4
+    unbreakable: true
+    # перезарядка эффекта, секунд
+    cooldown: 4.0
+    # сколько HP восстанавливает владельцу (2 HP = 1 сердце)
+    heal: 5.0
+    # сколько голода даёт владельцу
+    hunger: 1
+    # шанс навсегда отнять здоровье, в ПРОЦЕНТАХ
+    drain-chance: 1.0
+    # сколько HP отнимается навсегда
+    drain-amount: 2.0
+    # минимальное здоровье, ниже которого отнимать нельзя (защита от 0 HP)
+    drain-min-health: 6.0
+
+  # --- ШАБЛОН ДЛЯ ЛАВЫ (блок) ---
+  lava_mold:
+    name: "&eШаблон для лавы"
+    material: NOTE_BLOCK
+    lore:
+      - "&7Поставь и залей ведром лавы"
+    # забирать ли ведро (false = ведро просто становится пустым)
+    consume-bucket: false
+
+  # --- ШАБЛОН ДЛЯ ЛАВЫ С ЛАВОЙ (блок) ---
+  lava_mold_filled:
+    name: "&6Шаблон для лавы (с лавой)"
+    material: NOTE_BLOCK
+    lore:
+      - "&7Заполнен лавой"
+    # можно ли вычерпать лаву обратно пустым ведром
+    allow-scoop: true
+
+  # --- ДЕКОРАТИВНЫЕ ПРЕДМЕТЫ (просто добавить) ---
+  legendary_sword:
+    name: "&dЛегендарный меч"
+    material: NETHERITE_SWORD
+    lore: ["&8Легендарное оружие"]
+    attack-damage: 9.0
+    attack-speed: 1.6
+    unbreakable: true
+
+  lava_crystal:
+    name: "&6Лавовый кристалл"
+    material: AMETHYST_SHARD
+    lore: []
+
+  reinforced_string:
+    name: "&fУкреплённая нить"
+    material: STRING
+    lore: []
+
+  dragon_ingot:
+    name: "&5Драконий слиток"
+    material: IRON_INGOT
+    lore: []
+
+  ender_ingot:
+    name: "&3Эндер-слиток"
+    material: IRON_INGOT
+    lore: []
+
+  blood_ingot:
+    name: "&4Кровавый слиток"
+    material: IRON_INGOT
+    lore: []
+
+  lava_ingot:
+    name: "&6Лавовый слиток"
+    material: IRON_INGOT
+    lore: []
+
+  ruby_diamond:
+    name: "&cРубиновый алмаз"
+    material: DIAMOND
+    lore: []
+
+  rare_glove:
+    name: "&eРедкая перчатка"
+    material: LEATHER
+    lore: []
+
+  steel:
+    name: "&7Сталь"
+    material: IRON_INGOT
+    lore: []
+
+  master_redstone:
+    name: "&cМастер-редстоун"
+    material: REDSTONE
+    lore: []

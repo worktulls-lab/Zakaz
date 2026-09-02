@@ -1,0 +1,28 @@
+name: KitMod
+version: '${project.version}'
+main: ru.tarkmull.kitmod.KitModPlugin
+api-version: '1.21'
+authors: [TarkMull]
+description: Кастомные предметы с 3D-моделями и механиками для Paper 1.21.4
+
+commands:
+  kmgive:
+    description: Выдать кастомный предмет
+    usage: /kmgive <ник> <предмет> [кол-во]
+    permission: kitmod.give
+  hpgive:
+    description: Вернуть игроку навсегда отнятое здоровье
+    usage: /hpgive <ник> <хп>
+    permission: kitmod.hpgive
+  kitmod:
+    description: Информация и перезагрузка конфига
+    usage: /kitmod reload|list
+    permission: kitmod.admin
+
+permissions:
+  kitmod.give:
+    default: op
+  kitmod.hpgive:
+    default: op
+  kitmod.admin:
+    default: op
